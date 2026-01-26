@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - SKDU</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;600;700&display=swap');
+
+        :root {
+            --primary-color: #003366; /* Deep University Blue */
+            --secondary-color: #f4f4f9; /* Light Grey Background */
+            --accent-color: #d4a017; /* Gold Accent */
+            --text-color: #333;
+            --light-text-color: #fff;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: #fff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 2rem;
+        }
+
+        /* --- Header & Navigation --- */
+        .main-header {
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--light-text-color);
+            text-decoration: none;
+        }
+        
+        .logo i {
+            color: var(--accent-color);
+            margin-right: 0.5rem;
+        }
+
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .main-nav ul li {
+            margin-left: 2rem;
+        }
+
+        .main-nav ul a {
+            color: var(--light-text-color);
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        .main-nav ul a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* --- Hero Section --- */
+        .hero {
+            /* UPDATED: New background image URL */
+            background-image: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)), url('https://images.unsplash.com/photo-1568792923760-d70635a89fdc?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            height: 80vh;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--light-text-color);
+        }
+
+        .hero-content h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 5px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            background-color: #e6b843;
+        }
+
+        /* --- Content Sections --- */
+        .content-section {
+            padding: 4rem 0;
+        }
+        
+        .content-section.bg-light {
+            background-color: var(--secondary-color);
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        /* --- Features Grid --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .feature-card .icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* --- Footer --- */
+        .main-footer {
+            background: var(--primary-color);
+            color: var(--light-text-color);
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .social-links a {
+            color: var(--light-text-color);
+            margin: 0 0.75rem;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="main-nav container">
+            <a href="/" class="logo"><i class="fas fa-university"></i> SKDU</a>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/admissions">Admissions</a></li>
+                <li><a href="/academics">Academics</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Skadoosh University</h1>
+                <p>Excellence in Mastery, Wisdom for the Future.</p>
+                <a href="/academics" class="btn">Explore Our Programs</a>
+            </div>
+        </section>
+
+        <section id="about" class="content-section container">
+            <h2 class="section-title">Welcome to SKDU</h2>
+            <p style="text-align: center; max-width: 800px; margin: auto;">
+                Located in Juniper City, Skadoosh University is dedicated to fostering a community of learners, thinkers, and masters. Our mission is to provide a transformative educational experience that empowers students to achieve their highest potential and find their inner peace.
+            </p>
+        </section>
+
+        <section id="features" class="content-section bg-light">
+            <div class="container">
+                <h2 class="section-title">Why Choose Us?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                        <h3>Mentorship of Masters</h3>
+                        <p>Learn from legendary masters in a unique one-on-one mentorship program.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon"><i class="fas fa-book-reader"></i></div>
+                        <h3>Holistic Learning</h3>
+                        <p>Engage in studies that balance mind, body, and spirit for true understanding.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon"><i class="fas fa-users"></i></div>
+                        <h3>Vibrant Community</h3>
+                        <p>Join a diverse and inclusive community dedicated to mutual growth and respect.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p>&copy; Skadoosh University. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- VOICE AGENT UI ELEMENTS (UNCHANGED) -->
+    <button id="mic-button" class="mic-button">
+        <i class="fas fa-microphone"></i>
+    </button>
+    <div id="voice-agent-container"></div>
+    <!-- END VOICE AGENT UI ELEMENTS -->
+
+    <!-- SCRIPT FILES (UNCHANGED) -->
+    <script src="{{ url_for('static', filename='js/inject.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

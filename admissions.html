@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions - SKDU</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;600;700&display=swap">
+    <style>
+        /* Reusing styles from the homepage for consistency */
+        :root { --primary-color: #003366; --secondary-color: #f4f4f9; --accent-color: #d4a017; --text-color: #333; --light-text-color: #fff; }
+        body { font-family: 'Lato', sans-serif; margin: 0; padding: 0; color: var(--text-color); background-color: #fff; line-height: 1.6; }
+        .container { max-width: 1200px; margin: auto; padding: 0 2rem; }
+        .main-header { background-color: var(--primary-color); color: var(--light-text-color); padding: 1rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        .main-nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--light-text-color); text-decoration: none; }
+        .logo i { color: var(--accent-color); margin-right: 0.5rem; }
+        .main-nav ul { display: flex; list-style: none; padding: 0; margin: 0; }
+        .main-nav ul li { margin-left: 2rem; }
+        .main-nav ul a { color: var(--light-text-color); text-decoration: none; font-weight: 700; transition: color 0.3s ease; }
+        .main-nav ul a:hover { color: var(--accent-color); }
+        .hero { background-image: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80'); height: 60vh; background-position: center; background-size: cover; display: flex; justify-content: center; align-items: center; text-align: center; color: var(--light-text-color); }
+        .hero-content h1 { font-family: 'Montserrat', sans-serif; font-size: 3rem; }
+        .content-section { padding: 4rem 0; }
+        .section-title { text-align: center; font-family: 'Montserrat', sans-serif; font-size: 2.5rem; margin-bottom: 3rem; }
+        .timeline { list-style: none; padding: 0; position: relative; }
+        .timeline:before { content: ''; position: absolute; top: 0; bottom: 0; width: 4px; background: var(--primary-color); left: 50%; margin-left: -2px; }
+        .timeline-item { margin-bottom: 40px; position: relative; }
+        .timeline-item:after { content: ""; display: table; clear: both; }
+        .timeline-content { position: relative; width: 45%; padding: 20px; background: #fff; border-radius: 5px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); float: left; }
+        .timeline-item:nth-child(even) .timeline-content { float: right; }
+        .timeline-icon { position: absolute; top: 20px; left: 50%; width: 40px; height: 40px; background: var(--accent-color); color: var(--primary-color); border-radius: 50%; text-align: center; line-height: 40px; font-size: 1.5rem; transform: translateX(-50%); }
+        .main-footer { background: var(--primary-color); color: var(--light-text-color); text-align: center; padding: 2rem 0; margin-top: 2rem;}
+        .social-links a { color: var(--light-text-color); margin: 0 0.75rem; font-size: 1.5rem; transition: color 0.3s ease; }
+        .social-links a:hover { color: var(--accent-color); }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="main-nav container">
+            <a href="/" class="logo"><i class="fas fa-university"></i> SKDU</a>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/admissions">Admissions</a></li>
+                <li><a href="/academics">Academics</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Admissions Process</h1>
+            </div>
+        </section>
+
+        <section class="content-section container">
+            <h2 class="section-title">Your Journey to SKDU</h2>
+            <ul class="timeline">
+                <li class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-search"></i></div>
+                    <div class="timeline-content">
+                        <h3>Step 1: Explore & Discover</h3>
+                        <p>Explore our renowned programs in Martial Arts, Philosophy, and more. Discover our unique 'Mentorship of Masters' program and find the perfect path for you.</p>
+                    </div>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-file-alt"></i></div>
+                    <div class="timeline-content">
+                        <h3>Step 2: Prepare Your Application</h3>
+                        <p>Gather your transcripts, letters of recommendation, and write a personal essay on your journey towards inner peace and knowledge. Ensure all documents are ready before the deadline.</p>
+                    </div>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-paper-plane"></i></div>
+                    <div class="timeline-content">
+                        <h3>Step 3: Submit Your Application</h3>
+                        <p>Complete our online application form and submit all required documents. Our admissions team will review your application holistically.</p>
+                    </div>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-envelope-open-text"></i></div>
+                    <div class="timeline-content">
+                        <h3>Step 4: Receive Your Decision</h3>
+                        <p>Admission decisions are sent out in early May. We look forward to welcoming the next generation of masters to Juniper City.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; Skadoosh University. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- VOICE AGENT UI (UNCHANGED) -->
+    <button id="mic-button" class="mic-button"><i class="fas fa-microphone"></i></button>
+    <div id="voice-agent-container"></div>
+    <script src="{{ url_for('static', filename='js/inject.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

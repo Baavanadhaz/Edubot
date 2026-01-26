@@ -1,0 +1,7 @@
+flask
+flask-cors
+flask_sock
+python-dotenv
+deepgram-sdk
+google-generativeai
+elevenlabs

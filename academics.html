@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics - SKDU</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;600;700&display=swap">
+    <style>
+        :root { --primary-color: #003366; --secondary-color: #f4f4f9; --accent-color: #d4a017; --text-color: #333; --light-text-color: #fff; }
+        body { font-family: 'Lato', sans-serif; margin: 0; padding: 0; color: var(--text-color); background-color: #fff; line-height: 1.6; }
+        .container { max-width: 1200px; margin: auto; padding: 0 2rem; }
+        .main-header { background-color: var(--primary-color); color: var(--light-text-color); padding: 1rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        .main-nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--light-text-color); text-decoration: none; }
+        .logo i { color: var(--accent-color); margin-right: 0.5rem; }
+        .main-nav ul { display: flex; list-style: none; padding: 0; margin: 0; }
+        .main-nav ul li { margin-left: 2rem; }
+        .main-nav ul a { color: var(--light-text-color); text-decoration: none; font-weight: 700; transition: color 0.3s ease; }
+        .main-nav ul a:hover { color: var(--accent-color); }
+        .hero { background-image: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)), url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80'); height: 60vh; background-position: center; background-size: cover; display: flex; justify-content: center; align-items: center; text-align: center; color: var(--light-text-color); }
+        .hero-content h1 { font-family: 'Montserrat', sans-serif; font-size: 3rem; }
+        .content-section { padding: 4rem 0; }
+        .bg-light { background-color: var(--secondary-color); }
+        .section-title { text-align: center; font-family: 'Montserrat', sans-serif; font-size: 2.5rem; margin-bottom: 3rem; }
+        .programs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .program-card { background: #fff; border: 1px solid #ddd; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: transform 0.3s ease; }
+        .program-card:hover { transform: translateY(-5px); }
+        .program-card-content { padding: 2rem; }
+        .program-card h3 { font-family: 'Montserrat', sans-serif; color: var(--primary-color); }
+        .main-footer { background: var(--primary-color); color: var(--light-text-color); text-align: center; padding: 2rem 0; margin-top: 2rem;}
+        .social-links a { color: var(--light-text-color); margin: 0 0.75rem; font-size: 1.5rem; transition: color 0.3s ease; }
+        .social-links a:hover { color: var(--accent-color); }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="main-nav container">
+            <a href="/" class="logo"><i class="fas fa-university"></i> SKDU</a>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/admissions">Admissions</a></li>
+                <li><a href="/academics">Academics</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Our Academic Programs</h1>
+            </div>
+        </section>
+
+        <section class="content-section bg-light">
+            <div class="container">
+                <h2 class="section-title">Fields of Study</h2>
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <div class="program-card-content">
+                            <h3>Martial Arts</h3>
+                            <p>Our flagship program focuses on discipline, respect, and mastery of self. Study ancient techniques with modern applications under the guidance of world-renowned masters.</p>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-card-content">
+                            <h3>Philosophy</h3>
+                            <p>Explore the great questions of existence and the nature of wisdom. Our curriculum blends Eastern and Western philosophical traditions for a holistic understanding.</p>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-card-content">
+                            <h3>Inner Peace Studies</h3>
+                            <p>A unique interdisciplinary program combining meditation, mindfulness, and psychology to help students cultivate a balanced and resilient mind.</p>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-card-content">
+                            <h3>Digital Arts</h3>
+                            <p>Where tradition meets technology. Learn to create breathtaking digital art, animation, and interactive experiences inspired by classical aesthetics.</p>
+                        </div>
+                    </div>
+                     <div class="program-card">
+                        <div class="program-card-content">
+                            <h3>Sustainable Agriculture</h3>
+                            <p>Master the art of cultivating the land in harmony with nature. Our program focuses on organic farming, permaculture, and community food systems.</p>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-card-content">
+                            <h3>Calligraphy</h3>
+                            <p>Learn the art of mindful creation, the discipline of the brushstroke and the philosophy of capturing essence with ink to connect expression with inner calm.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="content-section container">
+            <h2 class="section-title">Mentorship of Masters</h2>
+            <p style="text-align: center; max-width: 800px; margin: auto;">
+                The cornerstone of an SKDU education is our 'Mentorship of Masters' program. Every student is personally paired with a seasoned master in their chosen field. This one-on-one guidance ensures that you not only learn the curriculum but also absorb the wisdom and experience of a lifetime dedicated to the craft.
+            </p>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; Skadoosh University. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- VOICE AGENT UI (UNCHANGED) -->
+    <button id="mic-button" class="mic-button"><i class="fas fa-microphone"></i></button>
+    <div id="voice-agent-container"></div>
+    <script src="{{ url_for('static', filename='js/inject.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f9;
+}
+
+/* --- Main Mic Button --- */
+.mic-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #000000;
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.mic-button:hover {
+    transform: scale(1.1);
+}
+
+/* --- Voice Agent Container --- */
+.voice-agent {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 350px;
+    height: 500px;
+    background-color: #000000;
+    color: white;
+    border-radius: 15px;
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: opacity 0.3s, transform 0.3s;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.voice-agent.active {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.voice-agent-header {
+    font-weight: bold;
+    padding: 15px;
+    background-color: #000000;
+    border-bottom: 1px solid #ffffff;
+    text-align: center;
+}
+
+/* --- Chat Body --- */
+.voice-agent-body {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.chat-bubble {
+    padding: 10px 15px;
+    border-radius: 18px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.chat-bubble.user {
+    background-color: #007bff;
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+}
+
+.chat-bubble.assistant {
+    background-color: #e9e9eb;
+    color: black;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+}
+
+/* --- Footer and Controls --- */
+.voice-agent-footer {
+    padding: 15px;
+    border-top: 1px solid #ffffff;
+    text-align: center;
+}
+
+.status-indicator {
+    font-style: italic;
+    color: #ffffff;
+    height: 20px;
+    margin-bottom: 10px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.control-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+#start-call-button {
+    background-color: #28a745; /* Green */
+}
+
+#end-call-button {
+    background-color: #dc3545; /* Red */
+}
+
+.control-button:hover {
+    transform: scale(1.1);
+}
+
+.control-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* --- Live Transcript Styles --- */
+.live-transcript-container {
+    padding: 5px 15px;
+    height: 40px; /* Give it a fixed height */
+    text-align: center;
+    color: #ffffff;
+    font-style: italic;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#live-transcript {
+    opacity: 0.7;
+}
